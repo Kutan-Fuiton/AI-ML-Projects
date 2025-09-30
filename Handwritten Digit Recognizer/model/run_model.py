@@ -31,7 +31,7 @@ sample_image = x_test[sample_index].reshape(1, 28, 28, 1)
 # Predict
 prediction = model.predict(sample_image)
 predicted_digit = np.argmax(prediction)
-print(f"🔢 Predicted Digit: {predicted_digit}")
+print(f"Predicted Digit: {predicted_digit}")
 
 plt.imshow(x_test[sample_index].reshape(28, 28), cmap="gray")
 plt.title(f"Prediction: {predicted_digit}")

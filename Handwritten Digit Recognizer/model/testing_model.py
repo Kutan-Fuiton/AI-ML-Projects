@@ -1,3 +1,5 @@
+# testing_model run the model on a custom image
+
 import matplotlib
 matplotlib.use('Agg')
 from keras.datasets import mnist
@@ -9,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # confirming trained model exists
 model = load_model("model/mnist_cnn.h5")
-print("✅ Model loaded successfully!")
+print("Model loaded successfully!")
 
 # Load MNIST test dataset
 (_, _), (x_test, y_test) = mnist.load_data()
@@ -31,7 +33,7 @@ img_array = img_array.reshape(1, 28, 28, 1)
 # Predict
 prediction = model.predict(img_array)
 predicted_digit = np.argmax(prediction)
-print(f"🔢 Predicted Digit: {predicted_digit}")
+print(f"Predicted Digit: {predicted_digit}")
 
 plt.imshow(img_array.reshape(28, 28), cmap="gray")
 plt.title(f"Prediction: {predicted_digit}")
