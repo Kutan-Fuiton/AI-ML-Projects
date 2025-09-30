@@ -1,4 +1,1 @@
-# Handwritten Digit Recognizer
-
-stuffs in progress
-
+# AI-ML-Projects
