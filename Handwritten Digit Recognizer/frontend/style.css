@@ -1,0 +1,11 @@
+canvas {
+    border: 2px solid black;
+    width: fit-content;
+    height: 80%;
+    background: white;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+}
