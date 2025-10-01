@@ -2,5 +2,5 @@
 
 stuffs in progress
 
-I runned the model on test datasets, its running perfectly
-but it getting failed on custom dataset, working on that
+model part done, now will make the frontend and backend a little b8r and interactive, then will move towards deployment
+
