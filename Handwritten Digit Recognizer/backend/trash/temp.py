@@ -1,15 +1,14 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
 import cv2
 import base64
 from keras.models import load_model
-import os
 
-app = Flask(__name__, static_folder="../frontend", static_url_path="")
-CORS(app)
+app = Flask(__name__)
+CORS(app)  
 
-# Load model
+# Load the trained model
 model = load_model("model/mnist_cnn.h5")
 
 def preprocess_image(img):
@@ -36,22 +35,16 @@ def preprocess_image(img):
 
     return processed
 
-@app.route("/")
-def index():
-    return send_from_directory("../frontend", "index.html")
-
-@app.route("/<path:path>")
-def serve_static(path):
-    return send_from_directory("../frontend", path)
-
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
         data = request.json["image"]
+        # Decode base64 string to image
         img_bytes = base64.b64decode(data.split(",")[1])
         img_array = np.frombuffer(img_bytes, np.uint8)
         img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 
+        # Prediction
         processed = preprocess_image(img)
         prediction = model.predict(processed)
         digit = int(np.argmax(prediction))
@@ -63,8 +56,3 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
