@@ -37,7 +37,7 @@ function clearCanvas() {
 }
 
 async function predictDigit() {
-  const image = canvas.toDataURL("image/png");
+  const image = canvas.toDataURL("image/png", 0.5);
   const response = await fetch("/predict", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
