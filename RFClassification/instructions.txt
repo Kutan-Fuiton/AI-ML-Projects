@@ -1,0 +1,13 @@
+# Dataset Instructions
+
+## Full Dataset
+Download the full Titanic dataset from:
+https://www.kaggle.com/c/titanic/data
+
+Save as: `Titanic_dataset.csv` inside `data/` folder.
+
+## Regenerate Model
+Run: `python model.py` to train and save new model
+
+## Sample Data
+A small sample is provided in `sample_titanic.csv` for testing.
