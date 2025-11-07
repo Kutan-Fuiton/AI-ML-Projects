@@ -15,7 +15,7 @@ This repository documents my journey learning Machine Learning from scratch. I'm
 - [x] Basic statistics and probability
 - [x] Introduction to NumPy and Pandas
 - [x] Data cleaning and exploration
-- [ ] Linear regression implementation
-- [ ] Classification algorithms
+- [x] Linear regression implementation
+- [x] Classification algorithms
 - [ ] Neural networks basics
 - [ ] Evaluation & Metrics
