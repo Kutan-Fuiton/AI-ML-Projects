@@ -1,0 +1,31 @@
+# Python environments
+env/
+venv/
+.venv/
+
+# Data directories
+data/
+datasets/
+
+# Model files
+*.pkl
+*.pickle
+*.joblib
+
+# Dataset files
+*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
