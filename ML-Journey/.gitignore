@@ -4,8 +4,8 @@ venv/
 .venv/
 
 # Data directories
-data/
-datasets/
+# data/
+# datasets/
 
 # Model files
 *.pkl
@@ -13,7 +13,7 @@ datasets/
 *.joblib
 
 # Dataset files
-*.csv
+# *.csv
 
 # Python cache
 __pycache__/
