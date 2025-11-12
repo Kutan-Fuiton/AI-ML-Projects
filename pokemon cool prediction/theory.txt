@@ -1,0 +1,12 @@
+1. Loading the dataset
+2. Data Cleaning
+    - Removed the column 'Type 2' due to a high number of missing values.
+    - remove those rows with 'Mega' in the 'Name' column to avoid bias.
+3. Data Preprocessing
+    - [HP, Attack, Defense, Sp. Atk, Sp. Def, Speed]  -- these are the numeric features.
+    - [Generation, Legendary] -- these are the categorical features.
+    - Encoding numeric features using StandardScaler.
+    - Encoding categorical features using OneHotEncoder.
+    - We have divided the features into numeric and categorical for better preprocessing because of their differences in range and type.
+    - used `pipeline` to streamline preprocessing steps for numeric and categorical data.
+    - then used `ColumnTransformer` to apply these pipelines to the respective columns.

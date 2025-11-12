@@ -5,18 +5,9 @@ matplotlib.use('Agg') # Set the backend *before* importing pyplot
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
 
 # loading the dataset
 data = pd.read_csv('data/pokemon.csv')
-
-data = data[~data['Name'].str.contains('Mega')] # <-- removing 'Mega' evolutions
-
-# print(data.isnull().sum())         # <-- checking for missing values
-data = data.drop(columns=['Type 2'])       # <-- removing 'Type 2' column
-# data.info()                 # <-- checking data types and non-null counts
 
 # displaying the first 5 rows of the dataset
 # print(data.head())
@@ -25,23 +16,11 @@ data = data.drop(columns=['Type 2'])       # <-- removing 'Type 2' column
 
 # Data Preprocessing --------
 
-numerics = ['HP', 'Attack', 'Defense', 'Sp. Atk', 'Sp. Def', 'Speed']
-categoricals = ['Generation', 'Legendary']
+# print(data.isnull().sum())         # <-- checking for missing values
+data = data.drop(columns=['Type 2'])       # <-- removing 'Type 2' column
+# data.info()                 # <-- checking data types and non-null counts
 
-numerics_pipeline = Pipeline(steps = [
-    ('scaler', StandardScaler())
-])
 
-categoricals_pipeline = Pipeline(steps = [
-    ('onehot', OneHotEncoder())
-])
-
-preprocessor = ColumnTransformer(
-    transformers = [
-        ('num', numerics_pipeline, numerics),
-        ('cat', categoricals_pipeline, categoricals)
-    ]
-)
 
 
 # Data Visualization --------
@@ -75,18 +54,13 @@ type_names = type_count.index.to_list()        # <-- getting the list of unique 
 
 # X Y Split --------
 
-X = data[numerics + categoricals]
+X = data.drop(columns=['#','Name','Type 1','Total'])
 Y = data['Type 1']
 
 # Train Test Split
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
-# model pipeline
-model = Pipeline(steps=[
-    ('preprocessor', preprocessor),
-    ('classifier', RandomForestClassifier(n_estimators=100, random_state=42))
-])
-
+model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, Y_train)
 
 # Making Predictions
