@@ -1,0 +1,62 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# -----------------------------
+# Environment variables
+# -----------------------------
+.env
+
+# -----------------------------
+# Temporary cloned repositories
+# -----------------------------
+tmp_repos/
+cloned_repos/
+
+# -----------------------------
+# Logs
+# -----------------------------
+*.log
+
+# -----------------------------
+# HuggingFace / Transformers cache
+# (VERY IMPORTANT)
+# -----------------------------
+.cache/
+.huggingface/
+.hf_cache/
+~/.cache/
+
+# -----------------------------
+# OS specific
+# -----------------------------
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# -----------------------------
+# IDEs / Editors
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+
+# -----------------------------
+# FastAPI / Uvicorn
+# -----------------------------
+*.pid
