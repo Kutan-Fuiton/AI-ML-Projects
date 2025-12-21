@@ -22,19 +22,6 @@ An AI-powered code review tool that analyzes GitHub repositories and provides in
 
 ---
 
-## 🏗️ Project Structure
-
-backend/
-├── agents/              # AI agents
-├── llm/                 # Centralized LLM logic
-├── models/              # Response schemas
-├── services/            # Orchestration & repo reading
-├── utils/               # Repo cloning utilities
-├── main.py              # FastAPI entry point
-├── .env                 # Environment variables (ignored)
-
----
-
 ## 🧪 How It Works
 
 1. User submits a GitHub repository URL
